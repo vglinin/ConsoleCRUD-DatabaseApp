@@ -9,11 +9,13 @@ public class ConsoleCRUD {
     public static void main(String[] args) {
 
         /**
-         * Устанавливает соединение с базой данных, создает объекты Connection, Statement и Scanner для работы с базой данных.
+         * @param connection представляет соединение с базой данных
          * @param DB_URL URL для подключения к базе данных
          * @param USER имя пользователя для доступа к базе данных
          * @param PASS пароль для доступа к базе данных
          * @see DatabaseConfig
+         * @param statement Используется для выполнения SQL запросов к базе данных.
+         * @param sc Считывает ввода пользователя с консоли
          */
         try (Connection connection = DriverManager.getConnection(DatabaseConfig.DB_URL, DatabaseConfig.USER, DatabaseConfig.PASS);
              Statement statement = connection.createStatement();
